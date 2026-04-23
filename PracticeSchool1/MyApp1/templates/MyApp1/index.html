@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title>teachers</title>
+    {% load static %}
+    <link href="{% static 'Style.css' %}" rel="stylesheet" />
+
+
+</head>
+
+
+<body>
+
+    <strong>Teachers</strong>
+
+    {% if content %}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Teaching Area</th>
+
+        </tr>
+        {% for teach in content %}
+        <tr>
+            <td>{{teach.Name}}</td>
+            <td>{{teach.Area}}</td>
+        </tr>
+        {% endfor %}
+
+
+    </table>
+    {% else %}
+    <strong>No data!!</strong>
+    {% endif %}
+
+    <p><a href="{% url 'input' &}">Input New Teachers</a></p>
+
+    <!-- delete teachers -->
+
+    <ul>
+        {% for t in content %}
+        <li>
+            {{ t.Name }} - {{ t.Area }}
+
+            <a href="{% url 'delete_teacher' t.id %}">
+                <button>Delete</button>
+            </a>
+
+        </li>
+        {% endfor %}
+    </ul>
+                
+
+    {% if user.is_authenticated %}
+    <p>Welcome {{user.username}}</p>
+    <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'signup' %}">Signup</a>
+    {% endif %}
+
+</body>
+</html>
+
+
