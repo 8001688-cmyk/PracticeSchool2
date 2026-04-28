@@ -14,6 +14,7 @@ urlpatterns = [
    path('signup/', MyApp1.views.signup_view, name='signup'), #Signup Page
    path('login/', auth_views.LoginView.as_view(template_name='MyApp1/login.html'), name='login'),
    path('logout/', auth_views.LogoutView.as_view(next_page='index'), name='logout'),
+   path('home/', MyApp1.views.home, name='home'),
 
 
 ]

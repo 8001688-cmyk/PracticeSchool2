@@ -52,4 +52,8 @@ def signup_view(request):
         form = SignUpForm()
 
     return render(request, "MyApp1/signup.html", {"form": form})
-                
+
+# HomePage
+
+def home(request):
+    return render(request, "MyApp1/home.html")                
