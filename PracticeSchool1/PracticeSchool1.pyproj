@@ -56,6 +56,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="HelloDjangoApp\templates\HelloDjangoApp\index.html" />
+    <Content Include="MyApp1\static\DS.pdf" />
+    <Content Include="MyApp1\static\images\download.jpg" />
     <Content Include="MyApp1\static\Style.css" />
     <Content Include="MyApp1\templates\MyApp1\index.html" />
     <Content Include="MyApp1\templates\MyApp1\input.html" />
@@ -72,6 +74,7 @@
     <Folder Include="MyApp1\" />
     <Folder Include="MyApp1\migrations\" />
     <Folder Include="MyApp1\static\" />
+    <Folder Include="MyApp1\static\images\" />
     <Folder Include="MyApp1\templates\" />
     <Folder Include="MyApp1\templates\MyApp1\" />
     <Folder Include="PracticeSchool1\" />

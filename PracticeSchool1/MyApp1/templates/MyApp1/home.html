@@ -15,15 +15,29 @@
     <!----Navigation---->
 
     <header class="home-header">
-        <h1>BSSS</h1>
+        {% load static %}
+        <img src="{% static 'images/download.jpg' %}" alt="BSSS">
         <nav class="home-nav">
+
+
+       
 
             <a href="#">Home</a>
             <a href="#">Unit Outlines</a>
             <a href="#">Help</a>
-           
-            <a href="#"  class="log-btn">Login in/Sign Up</a>
-         
+
+
+
+            {% if user.is_authenticated %}
+            <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="log-btn">Log out</button>
+            </form>
+            {% else %}
+            <a href="{% url 'login' %}" class="log-btn">Login</a>
+            <a href="{% url 'signup' %}" class="log-btn">Signup</a>
+            {% endif %}
+
         </nav>
     </header>
 
@@ -31,9 +45,14 @@
 
     <section class="home-title">
         <div class="home-content">
-        <h2>Welcome!</h2>
-        <p>Head to Unit butline to start</p>
-        <a href="#" class="home-button">Unit Outline</a>
+            <p>Welcome {{user.username}}!</p>
+            <p>
+                ACT Board of Senior Secondary Studies
+                The ACT Board of Senior Secondary Studies (ACT BSSS) is a statutory authority responsible for the certification of senior secondary school studies in government and non-government schools in the Australian Capital Territory.
+            </p>
+            
+            <a href="#" class="home-button">Unit Outline</a>
+        
         </div>
     </section>
 

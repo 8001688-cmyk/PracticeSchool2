@@ -96,6 +96,8 @@ td {
 
 .home-content{
     padding: 50px;
+    font-size: 1.5rem;
+
 }
 
 .home-button {
@@ -107,10 +109,11 @@ td {
     text-decoration: none;
 }
 
+
+
 .home-footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 10px;
-
 }
