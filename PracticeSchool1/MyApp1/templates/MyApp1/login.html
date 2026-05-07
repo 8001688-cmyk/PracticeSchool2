@@ -2,23 +2,29 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    {% load static %}
     <meta charset="utf-8" />
     <title>Sign Up</title>
+    <link href="{% static 'Style.css' %}" rel="stylesheet" />
 </head>
 <body>
-    <h2>
-        Log in
-    </h2>
+    <div class="sign-up">
+        <div class="sign-up-h2">
+            <h2>
+                Log in
+            </h2>
 
+            </div>
 
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+           
+                <button type="submit"  class="sign-up-btn">Login</button>
+             
 
-    <form method="POST">
-        {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit">Login</button>
-  
-    </form>
+        </form>
+        </div>
 
- 
 </body>
 </html>

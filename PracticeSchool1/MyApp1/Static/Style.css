@@ -110,10 +110,80 @@ td {
 }
 
 
-
 .home-footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 10px;
 }
+
+                                                            /* SIGNUP/LOGIN PAGE */
+
+.sign-up {
+    background: #f5f7fb;
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    font-family: 'poppins', 'sans-serif';
+    box-sizing: border-box;
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.sign-up-h2 {
+    margin: 0 0 16px;
+    font-size: 1.5rem;
+    justify-content: center;
+    letter-spacing: .2px;
+}
+
+.sign-up form{
+    max-width: 420px; 
+    width: 100%;
+}
+
+.sign-up form p{
+    margin: 10px 0;
+}
+
+.sign-up label{
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #334155;
+}
+
+.sign-up input, select, textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    background: #fff;
+    font-size: 14px;
+    outline: none;
+
+}
+
+.sign-up input:focus, select:focus, textarea:focus {
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 3px rgba(59,130,246,.15);
+}
+
+.sign-up-btn {
+    width: 105.5%;
+    margin-top: 12px;
+    padding: 11px 14px;
+    border: 0;
+    border-radius: 10px;
+    background: #3b82f6;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.sign-up-btn:hover {
+    background: #2563eb;
+}
+
