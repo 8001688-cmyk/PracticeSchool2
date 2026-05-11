@@ -16,7 +16,7 @@
 
     <header class="home-header">
         {% load static %}
-        <img src="{% static 'images/download.jpg' %}" alt="BSSS">
+        <img src="{% static 'images/download.png' %}" alt="BSSS" class="home-logo">
         <nav class="home-nav">
 
 
@@ -45,7 +45,9 @@
 
     <section class="home-title">
         <div class="home-content">
-            <p>Welcome {{user.username}}!</p>
+            <div class="home-welcome">
+                <p>Welcome {{user.username}}!</p>
+            </div>
             <p>
                 ACT Board of Senior Secondary Studies
                 The ACT Board of Senior Secondary Studies (ACT BSSS) is a statutory authority responsible for the certification of senior secondary school studies in government and non-government schools in the Australian Capital Territory.

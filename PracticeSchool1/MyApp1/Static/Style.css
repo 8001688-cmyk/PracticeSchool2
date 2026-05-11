@@ -46,6 +46,10 @@ td {
    
 }
 
+.home-logo {
+    max-width: 700px;
+}
+
 .home-nav a {
     color: white;
     text-decoration: none;
@@ -91,13 +95,14 @@ td {
 .home-title {
     background-color: #f4f4f4;
     text-align: center;
-    padding: 60px 20px;
+    padding: 40px 20px;
+   margin-bottom: 20px;
 }
 
-.home-content{
+.home-content {
     padding: 50px;
     font-size: 1.5rem;
-
+    padding-bottom: 50px;
 }
 
 .home-button {
@@ -107,6 +112,7 @@ td {
     color: white;
     cursor: pointer;
     text-decoration: none;
+    display: inline-block;
 }
 
 
@@ -115,6 +121,16 @@ td {
     color: white;
     text-align: center;
     padding: 10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.home-welcome {
+    font-weight: 500;
+    font-size: 5rem;
+    text-decoration: italics;
 }
 
                                                             /* SIGNUP/LOGIN PAGE */
