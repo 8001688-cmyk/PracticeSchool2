@@ -8,7 +8,6 @@ from .forms import InputForm
 from django.contrib.auth.models import User
 from .forms import SignUpForm
 from pypdf import PdfWriter, PdfReader #Joining PDFs
-
 from reportlab.pdfgen import canvas #Generating PDfs
 
 from reportlab.platypus import Paragraph,Image,Table #Generating PDfs
@@ -117,4 +116,15 @@ def generate_pdf():
 
     buffer.seek(0)
     return buffer 
+
+# Outline Gen
+
+def outline(request):
+       return render(request, "MyApp1/outline.html")     
+
+# PDF uploader
+
+
+
+
 

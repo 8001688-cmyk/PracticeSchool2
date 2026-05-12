@@ -13,8 +13,10 @@
             <h2>
                 Log in
             </h2>
+            <a href="{% url 'signup' %}">don't have an account?</a>
 
-            </div>
+
+        </div>
 
         <form method="POST">
             {% csrf_token %}
