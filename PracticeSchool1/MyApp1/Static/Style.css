@@ -137,7 +137,6 @@ td {
 .home-welcome {
     font-weight: 500;
     font-size: 5rem;
-    text-decoration: italics;
 }
 
                                                             /* SIGNUP/LOGIN PAGE */
@@ -153,6 +152,22 @@ td {
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
+    animation: FadeInSlide 0.8s ease-out forwards;
+    border: 1px solid white;
+    box-sizing: border-box;
+    border-width: 250px 650px;
+    border-radius: 10px;
+}
+@keyframes FadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-50px); 
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0); 
+    }
 }
 
 .sign-up-h2 {
