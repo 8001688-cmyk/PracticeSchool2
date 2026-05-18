@@ -9,6 +9,7 @@ from django.contrib.auth.models import User
 from .forms import SignUpForm
 from pypdf import PdfWriter, PdfReader #Joining PDFs
 from reportlab.pdfgen import canvas #Generating PDfs
+from .forms import PDFUploadForm #Upload PDF
 
 from reportlab.platypus import Paragraph,Image,Table #Generating PDfs
 
@@ -124,6 +125,20 @@ def outline(request):
 
 # PDF uploader
 
+def upload_pdf(request):
+
+    if request.method == "POST":
+        
+        form = PDFUploadForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+
+    else:
+        form = PDFUploadForm()
+
+    return render(request, "MyApp1/upload_pdf.html", {"form": form})
 
 
 

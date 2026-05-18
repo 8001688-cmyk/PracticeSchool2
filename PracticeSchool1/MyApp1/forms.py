@@ -1,6 +1,7 @@
 from django import forms 
 from .models import teacher
 from django.contrib.auth.models import User
+from .models import PDFUpload
 
 class InputForm(forms.ModelForm):
     class Meta:
@@ -16,5 +17,10 @@ class SignUpForm(forms.ModelForm):
 
 # PDF Uploades
 
+class PDFUploadForm(forms.ModelForm):
+
+    class Meta:
+        model = PDFUpload
+        fields = ['title', 'subject', 'pdf_file']
 
     

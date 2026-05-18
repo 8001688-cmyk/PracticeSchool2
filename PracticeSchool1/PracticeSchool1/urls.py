@@ -3,6 +3,9 @@ import MyApp1.views
 from django.contrib import admin
 from django.urls import path
 from django.contrib.auth import views as auth_views
+from django.conf import settings
+
+from django.conf.urls.static import static
 
 urlpatterns = [
     # Uncomment the next line to enable the admin:
@@ -19,7 +22,8 @@ urlpatterns = [
    path('report/', MyApp1.views.report, name='report'),
    path('test/', MyApp1.views.index, name='test'),
    path('outline/', MyApp1.views.outline, name='outline'),
-   
+   path('upload/', MyApp1.views.upload_pdf, name='upload_pdf'),
+   static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
 ]
@@ -27,3 +31,5 @@ urlpatterns = [
 admin.site.site_header = "BSSS administration"
 admin.site.index_title = "Welcome to BSSS"
 admin.site.site_title = "BSSS Admin"
+
+
