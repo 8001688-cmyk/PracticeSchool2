@@ -1,0 +1,69 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{% static 'Style.css' %}" rel="stylesheet" />
+    <title>Home</title>
+
+</head>
+
+<body>
+
+    <!----Navigation---->
+
+    <header class="home-header">
+        {% load static %}
+        <img src="{% static 'images/download.png' %}" alt="BSSS" class="home-logo">
+        <nav class="home-nav">
+
+
+       
+
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'outline' %}">Unit Outlines</a>
+            <a href="#">Help</a>
+
+
+
+            {% if user.is_authenticated %}
+            <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="log-btn">Log out</button>
+            </form>
+            {% else %}
+            <a href="{% url 'login' %}" class="log-btn">Login</a>
+            <a href="{% url 'signup' %}" class="log-btn">Signup</a>
+            {% endif %}
+
+        </nav>
+    </header>
+
+    <!----Title---->
+
+    <section class="home-title">
+        <div class="home-content">
+            <div class="home-welcome">
+                <p>Welcome {{user.username}}!</p>
+            </div>
+            <p>
+                ACT Board of Senior Secondary Studies
+                The ACT Board of Senior Secondary Studies (ACT BSSS) is a statutory authority responsible for the certification of senior secondary school studies in government and non-government schools in the Australian Capital Territory.
+            </p>
+            
+            <a href="{% url 'signup' %}" class="home-button">Get started</a>
+        
+        </div>
+    </section>
+
+
+    <!---Footer--->
+    <div class="home-footer">
+        <footer>
+            <p>Aryan Kanekal's website</p>
+        </footer>
+    </div>
+</body>
+</html>

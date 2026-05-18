@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    transition: 0.5s;
+    color: red;
+}
+
+a:hover{
+    color: lightblue;
+    text-decoration: underline;
+}
+
+
+
+th {
+    padding: 10px;
+}
+
+td {
+    padding: 9px;
+}
+
+                                                                    /*  HOMEPAGE  */
+
+.home-header{
+    background-color: #333;
+    color: white;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-nav{
+  
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    
+   
+}
+
+.home-logo {
+    max-width: 700px;
+}
+
+.home-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.05s ease;
+}
+
+.home-nav a:hover{
+    background-color: #555;
+}
+
+.home-nav a:active{
+    transform: translateY(1px);
+}
+
+.home-header h1{
+    margin: 0;
+}
+
+.log-btn {
+    background: #ffb703;
+    color: #111;
+    font-weight: 800;
+    border-radius: 10px;
+    padding: 12px 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    border: 2px solid rgba(255,255,255,0.15);
+}
+
+.log-btn:hover {
+        background: #ffb703;
+        color: #ffb703;
+        transform: translateY(-1px);
+}
+
+.log-btn:active {
+        transform: translateY(1px);
+        box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+}
+
+.home-title {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 40px 20px;
+   margin-bottom: 20px;
+}
+
+.home-content {
+    padding: 50px;
+    font-size: 1.5rem;
+    padding-bottom: 50px;
+}
+
+.home-button {
+    padding:  10px 20px;
+    border: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+.home-button:hover {
+    text-decoration: none;
+    color: #ffb703;
+    background-color: #fff;
+    border: 1px solid #111;
+
+}
+
+
+.home-footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.home-welcome {
+    font-weight: 500;
+    font-size: 5rem;
+}
+
+                                                            /* SIGNUP/LOGIN PAGE */
+
+.sign-up {
+    background: #f5f7fb;
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    font-family: 'poppins', 'sans-serif';
+    box-sizing: border-box;
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    animation: FadeInSlide 0.8s ease-out forwards;
+    border: 1px solid white;
+    box-sizing: border-box;
+    border-width: 250px 650px;
+    border-radius: 10px;
+}
+@keyframes FadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-50px); 
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+
+.sign-up-h2 {
+    margin: 0 0 16px;
+    font-size: 1.5rem;
+    justify-content: center;
+    letter-spacing: .2px;
+}
+
+.sign-up form{
+    max-width: 420px; 
+    width: 100%;
+}
+
+.sign-up form p{
+    margin: 10px 0;
+}
+
+.sign-up label{
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #334155;
+}
+
+.sign-up input, select, textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    background: #fff;
+    font-size: 14px;
+    outline: none;
+
+}
+
+.sign-up input:focus, select:focus, textarea:focus {
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 3px rgba(59,130,246,.15);
+}
+
+.sign-up-btn {
+    width: 105.5%;
+    margin-top: 12px;
+    padding: 11px 14px;
+    border: 0;
+    border-radius: 10px;
+    background: #3b82f6;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.sign-up-btn:hover {
+    background: #2563eb;
+}
+
