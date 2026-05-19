@@ -112,25 +112,40 @@ def generate_pdf():
     buffer.seek(0)
     return buffer 
 
-# Outline Gen
+# subject
+subjects = {
+    "english": {
+        "name": "English",
+        "description": "English focuses on reading, writing, analysing texts, and developing communication skills.",
+        "link": "https://www.bsss.act.edu.au/"
+    },
+    "maths": {
+        "name": "Mathematics",
+        "description": "Mathematics develops problem-solving, algebra, geometry, statistics, and logical thinking skills.",
+        "link": "https://www.bsss.act.edu.au/"
+    },
+    "software": {
+        "name": "Software Engineering",
+        "description": "Software Engineering focuses on programming, web development, databases, algorithms, and designing digital solutions.",
+        "link": "https://www.bsss.act.edu.au/"
+    },
+    "design": {
+        "name": "Design",
+        "description": "Design explores visual communication, creativity, design principles, and practical project development.",
+        "link": "https://www.bsss.act.edu.au/"
+    },
+    "history": {
+        "name": "History",
+        "description": "History explores past events, cultures, and societies to develop critical thinking and understanding.",
+        "link": "https://www.bsss.act.edu.au/"
+    }
+}
+
 
 def outline(request):
-    if request.method == "POST":
-        form = PDFUploadForm(request.POST, request.FILES)
-
-        if form.is_valid():
-            form.save()
-            return redirect("outline")
-    else:
-        form = PDFUploadForm()
-
-    pdfs = UploadedPDF.objects.all().order_by("-uploaded_at")
-
     return render(request, "MyApp1/outline.html", {
-        "form": form,
-        "pdfs": pdfs
+        "subjects": subjects
     })
-
 
 
 

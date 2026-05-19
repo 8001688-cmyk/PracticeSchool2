@@ -1,37 +1,55 @@
 <!DOCTYPE html>
 {% load static %}
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Outline Generator</title>
-    <link href="{% static 'MyApp1/Outline.css' %}" rel="stylesheet" />
+    <title>Unit Outlines</title>
+    <link href="{% static 'Style.css' %}" rel="stylesheet" />
 </head>
+
 <body>
-    <section class="outline">
-        <div class="pdf-upload">
-            <h2>Upload PDF</h2>
-            <form method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit">Upload</button>
-            </form>
+    <h1>Subjects</h1>
 
-            <h2>Uploaded PDFs</h2>
+    <p>Click a subject to view information below.</p>
 
-            {% if pdfs %}
-            <uL>
-                {% for item in pdfs %}
-                <li>
-                    {{ item.title }}
-                    <a href="{{ item.pdf.url }}" target="_blank">View PDF</a>
-                </li>
-                {% endfor %}
-            </uL>
-            {% else %}
-            <p>No PDFs uploaded yet.</p>
-            {% endif %}
-        </div>
-    </section>
+    <div class="subject-list">
+        {% for key, subject in subjects.items %}
+            <div class="subject-card">
+                <h2>{{ subject.name }}</h2>
+                <p>{{ subject.description }}</p>
+
+                <button 
+                    class="subject-btn"
+                    onclick="showSubject(
+                        '{{ subject.name }}',
+                        '{{ subject.description }}',
+                        '{{ subject.link }}'
+                    )">
+                    View {{ subject.name }}
+                </button>
+            </div>
+        {% endfor %}
+    </div>
+
+    <hr>
+
+    <div id="subject-info" class="subject-info" style="display: none;">
+        <h2 id="subject-title"></h2>
+        <p id="subject-description"></p>
+           <p><a href="{% url 'report' %}">Download Subject PDF</a></p>
+    </div>
+
+    <br>
+    <a href="{% url 'home' %}">Back to Home</a>
+
+    <script>
+        function showSubject(name, description, link) {
+            document.getElementById("subject-info").style.display = "block";
+            document.getElementById("subject-title").innerText = name;
+            document.getElementById("subject-description").innerText = description;
+            document.getElementById("subject-link").href = link;
+        }
+    </script>
 </body>
 </html>

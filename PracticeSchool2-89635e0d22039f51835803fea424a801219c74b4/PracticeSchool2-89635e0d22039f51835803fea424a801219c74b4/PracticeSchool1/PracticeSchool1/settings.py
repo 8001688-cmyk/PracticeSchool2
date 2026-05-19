@@ -118,7 +118,5 @@ STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
 LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = "index"
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 

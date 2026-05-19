@@ -23,7 +23,7 @@
        
 
             <a href="{% url 'home' %}">Home</a>
-            <a href="{% url 'outline' %}">Unit Outlines</a>
+        
             <a href="#">Help</a>
 
 
@@ -34,6 +34,7 @@
                 <button type="submit" class="log-btn">Log out</button>
             </form>
             {% else %}
+            <a href="{% url 'outline' %}">Unit Outlines</a>
             <a href="{% url 'login' %}" class="log-btn">Login</a>
             <a href="{% url 'signup' %}" class="log-btn">Signup</a>
             {% endif %}
@@ -59,7 +60,7 @@
     </section>
 
 
-    <!---Footer--->
+    <!---Footer-->
     <div class="home-footer">
         <footer>
             <p>Aryan Kanekal's website</p>

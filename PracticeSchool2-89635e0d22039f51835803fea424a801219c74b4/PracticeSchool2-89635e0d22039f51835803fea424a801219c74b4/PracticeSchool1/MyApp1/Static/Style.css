@@ -225,3 +225,41 @@ td {
     background: #2563eb;
 }
 
+                                                        /* SUBJECT */
+
+.subject-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.subject-card {
+    width: 250px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #f5f5f5;
+}
+
+.subject-btn {
+    margin-top: 10px;
+    background-color: #333;
+    color: white;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.subject-btn:hover {
+    background-color: #555;
+}
+
+.subject-info {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #fafafa;
+}

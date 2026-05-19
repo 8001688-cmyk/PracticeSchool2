@@ -15,17 +15,6 @@ class SignUpForm(forms.ModelForm):
         model = User
         fields = ['username', 'password']
 
-# PDF Uploades
-
-class PDFUploadForm(forms.ModelForm):
-    class Meta:
-        model = UploadedPDF
-        fields = ['title', 'pdf']
-        widgets = {
-            'pdf': forms.FileInput(attrs={
-                'accept': 'application/pdf'
-            })
-        }
 
 
     
