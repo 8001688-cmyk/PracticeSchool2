@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Unit Outlines</title>
+    <link href="{% static 'Style.css' %}" rel="stylesheet" />
+</head>
+
+<body class="outline-body">
+
+    <!----Navigation---->
+
+    <header class="home-header">
+        {% load static %}
+        <img src="{% static 'images/download.png' %}" alt="BSSS" class="home-logo">
+        <nav class="home-nav">
+
+
+
+
+            <a href="{% url 'home' %}">Home</a>
+            <a href="#">Help</a>
+
+
+
+            {% if user.is_authenticated %}
+            <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="log-btn">Log out</button>
+            </form>
+            {% else %}
+            <a href="{% url 'login' %}" class="log-btn">Login</a>
+            <a href="{% url 'signup' %}" class="log-btn">Signup</a>
+            <a href="{% url 'outline' %}">Unit Outlines</a>
+            {% endif %}
+
+        </nav>
+    </header>
+    <h1>Subjects</h1>
+
+    <p>Click a subject to view information below.</p>
+
+    <div class="subject-list">
+        {% for key, subject in subjects.items %}
+        <div class="subject-card">
+            <h2>{{ subject.name }}</h2>
+            <p>{{ subject.description }}</p>
+
+            <button class="subject-btn"
+                    onclick="showSubject(
+                        '{{ subject.name }}',
+                        '{{ subject.description }}',
+
+                    )">
+                View {{ subject.name }}
+
+
+            </button>
+        </div>
+        {% endfor %}
+    </div>
+
+    <hr class="outline-hr">
+
+    <div id="subject-info" class="subject-info" style="display: none;">
+        <h2 id="subject-title"></h2>
+        <p id="subject-description"></p>
+        <p><a href="{% url 'report' %}" class="">Download Subject PDF</a></p>
+    </div>
+
+
+
+    <script>
+        function showSubject(name, description, link) {
+            document.getElementById("subject-info").style.display = "block";
+            document.getElementById("subject-title").innerText = name;
+            document.getElementById("subject-description").innerText = description;
+
+        }
+    </script>
+</body>
+</html>
