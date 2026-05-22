@@ -4,11 +4,10 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib.auth import views as auth_views
 from django.conf import settings
-
 from django.conf.urls.static import static
 
 urlpatterns = [
-    # Uncomment the next line to enable the admin:
+   # Uncomment the next line to enable the admin:
    path('admin/', admin.site.urls),
    re_path(r'^home$', MyApp1.views.home, name='home'),
    re_path(r'^$', MyApp1.views.home, name='index'),
@@ -21,15 +20,14 @@ urlpatterns = [
    path('home/', MyApp1.views.home, name='home'),
    path('report/', MyApp1.views.report, name='report'),
    path('test/', MyApp1.views.index, name='test'),
-   path('outline/', MyApp1.views.outline, name='outline'),
-   path('upload/', MyApp1.views.upload_pdf, name='upload_pdf'),
-   static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+   path('outline/', MyApp1.views.outline, name='outline')
+  
+   
 
 
 ]
 
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 admin.site.site_header = "BSSS administration"
 admin.site.index_title = "Welcome to BSSS"
 admin.site.site_title = "BSSS Admin"
-
-

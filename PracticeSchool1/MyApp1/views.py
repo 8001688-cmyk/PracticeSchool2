@@ -3,20 +3,15 @@ from urllib import response
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from datetime import datetime 
+
 from .models import teacher
-from .forms import InputForm
+from .forms import InputForm, SignUpForm
 from django.contrib.auth.models import User
-from .forms import SignUpForm
 from pypdf import PdfWriter, PdfReader #Joining PDFs
 from reportlab.pdfgen import canvas #Generating PDfs
-from .forms import PDFUploadForm #Upload PDF
-
 from reportlab.platypus import Paragraph,Image,Table #Generating PDfs
-
 from django.http import FileResponse #Downloading files
-
 from django.contrib.staticfiles.storage import staticfiles_storage #Working with static files
-
 from io import BytesIO #Using Byte stream
 
 
@@ -118,28 +113,40 @@ def generate_pdf():
     buffer.seek(0)
     return buffer 
 
-# Outline Gen
+# Subject view
+
+
+subjects = {
+    "english": {
+        "name": "English",
+        "description": "English focuses on reading, writing, analysing texts, and developing communication skills.",
+      
+    },
+    "maths": {
+        "name": "Mathematics",
+        "description": "Mathematics develops problem-solving, algebra, geometry, statistics, and logical thinking skills.",
+     
+    },
+    "software": {
+        "name": "Software Engineering",
+        "description": "Software Engineering focuses on programming, web development, databases, algorithms, and designing digital solutions.",
+      
+    },
+    "design": {
+        "name": "Design",
+        "description": "Design explores visual communication, creativity, design principles, and practical project development.",
+       
+    },
+    "history": {
+        "name": "History",
+        "description": "History explores past events, cultures, and societies to develop critical thinking and understanding.",
+   
+    }
+}
+
 
 def outline(request):
-       return render(request, "MyApp1/outline.html")     
-
-# PDF uploader
-
-def upload_pdf(request):
-
-    if request.method == "POST":
-        
-        form = PDFUploadForm(request.POST, request.FILES)
-
-        if form.is_valid():
-            form.save()
-            return redirect('home')
-
-    else:
-        form = PDFUploadForm()
-
-    return render(request, "MyApp1/upload_pdf.html", {"form": form})
-
-
-
+    return render(request, "MyApp1/outline.html", {
+        "subjects": subjects
+    })
 
